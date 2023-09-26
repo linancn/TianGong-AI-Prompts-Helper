@@ -16,6 +16,10 @@ const manifest: chrome.runtime.ManifestV3 = {
   action: {
     default_popup: "src/pages/popup/index.html",
     default_icon: "icon-34.png",
+    default_title: "Open TianGong Prompter",
+  },
+  side_panel: {
+    default_path: "src/pages/panel/index.html",
   },
   // chrome_url_overrides: {
   //   newtab: "src/pages/newtab/index.html",
@@ -44,6 +48,9 @@ const manifest: chrome.runtime.ManifestV3 = {
       matches: ["*://*/*"],
     },
   ],
+  permissions: [
+    "sidePanel",
+  ] as unknown as chrome.runtime.ManifestV3["permissions"],
 };
 
 export default manifest;
